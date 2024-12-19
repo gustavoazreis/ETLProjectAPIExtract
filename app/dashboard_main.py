@@ -6,6 +6,7 @@ import os
 from datetime import datetime
 from dotenv import load_dotenv
 
+# Carregando e lendo as variáveis de ambiente do .env
 load_dotenv()
 postgres_user = os.getenv("postgres_user")
 postgres_password = os.getenv("postgres_password")
@@ -13,6 +14,7 @@ postgres_host = os.getenv("postgres_host")
 postgres_port = os.getenv("postgres_port")
 postgres_db = os.getenv("postgres_db")
 
+# Query dos dados necessários - no PostgreSQL - para o dashboard
 def read_data_postgres():
     try:
         conn = psycopg2.connect(
@@ -30,6 +32,7 @@ def read_data_postgres():
         st.error(f"Erro ao conectar ao PostgreSQL: {e}")
         return pd.DataFrame()
 
+# Dashboard
 def main():
     st.set_page_config(page_title="Dashboard de Preços do Bitcoin", layout="wide")
     st.title("📊 Dashboard de Preços do Bitcoin")
