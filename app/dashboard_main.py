@@ -5,6 +5,7 @@ import time
 import os
 from datetime import datetime
 from dotenv import load_dotenv
+import altair as alt
 
 # Carregando e lendo as variáveis de ambiente do .env
 load_dotenv()
@@ -14,7 +15,7 @@ postgres_host = os.getenv("postgres_host")
 postgres_port = os.getenv("postgres_port")
 postgres_db = os.getenv("postgres_db")
 
-# Query dos dados necessários - no PostgreSQL - para o dashboard
+# Query dos dados necessários - no PostgreSQL -  para o dashboard
 def read_data_postgres():
     try:
         conn = psycopg2.connect(
@@ -46,9 +47,22 @@ def main():
 
         df['timestamp'] = pd.to_datetime(df['timestamp'])
         df = df.sort_values(by='timestamp')
-        
+
         st.subheader("📈 Evolução do Preço do Bitcoin")
-        st.line_chart(data=df, x='timestamp', y='valor', use_container_width=True)
+
+        y_min = df['valor'].min() * 0.98  # Adicionando uma margem de 2%
+        y_max = df['valor'].max() * 1.08  # Adicionando uma margem de 2%
+
+        chart = alt.Chart(df).mark_line().encode(
+            x=alt.X('timestamp:T', title='Timestamp'),
+            y=alt.Y('valor:Q', title='Preço do Bitcoin', scale=alt.Scale(domain=[y_min, y_max]))
+        ).properties(
+            width='container',
+            height=400,
+            title="Evolução do Preço do Bitcoin"
+        )
+
+        st.altair_chart(chart, use_container_width=True)
 
         st.subheader("🔢 Estatísticas Gerais")
         col1, col2, col3 = st.columns(3)
