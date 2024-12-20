@@ -1,6 +1,13 @@
 # ETL Coinbase API Project
 This project is part of the Data Journey and aims to extract data from the Coinbase API, transform it, and load it for analysis.
 
+![Draw of the Pipeline](https://drive.google.com/file/d/1rLJ_ISRHKI97ENQX7xVrCJufdBwGy5Kl/view?usp=sharing)
+
+## Links para consulta:
+[PostgreSQL DB](https://dashboard-etl-api-coinbase.onrender.com) (yeah, it takes a while to open)
+[Dashboard](https://db-etl-api-coinbase.onrender.com) (yeah, it takes a while to open)
+[Logs](https://logfire.pydantic.dev/gustavoazreis/etl-api-coinbase)
+
 ## Repository Structure
 - **app/:** Contains the main scripts for running the Streamlit dashboard.
 - **src/:** Contains the main scripts for running the pipeline and loading data into databases.
