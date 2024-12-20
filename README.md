@@ -1,7 +1,7 @@
 # ETL Coinbase API Project
 This project is part of the Data Journey and aims to extract data from the Coinbase API, transform it, and load it for analysis.
 
-![Draw of the Pipeline](https://drive.google.com/file/d/1rLJ_ISRHKI97ENQX7xVrCJufdBwGy5Kl/view?usp=sharing)
+![Draw of the Pipeline](https://github.com/user-attachments/assets/0b33c1a6-967c-4fc6-93c0-86ed613060ab)
 
 ## Links para consulta:
 [PostgreSQL DB](https://dashboard-etl-api-coinbase.onrender.com) (yeah, it takes a while to open)
