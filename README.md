@@ -3,7 +3,7 @@ This project is part of the Data Journey and aims to extract data from the Coinb
 
 ![Draw of the Pipeline](https://github.com/user-attachments/assets/0b33c1a6-967c-4fc6-93c0-86ed613060ab)
 
-## Links para consulta:
+## Important links FYI:
 [PostgreSQL DB](https://dashboard-etl-api-coinbase.onrender.com) (yeah, it takes a while to open)
 [Dashboard](https://db-etl-api-coinbase.onrender.com) (yeah, it takes a while to open)
 [Logs](https://logfire.pydantic.dev/gustavoazreis/etl-api-coinbase)
